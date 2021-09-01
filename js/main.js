@@ -33,3 +33,9 @@ function handlePlayClues(){
     
     
 attemptButton.addEventListener('click', handlePlayClues);
+
+function userNumberCounter(ev);{ 
+    const eventCounter = ev.currentTarget;
+}
+
+   
