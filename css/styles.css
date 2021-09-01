@@ -1,6 +1,12 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 .form{
+    
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content:left;
     align-items: flex-start;
 }
