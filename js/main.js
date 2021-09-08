@@ -30,18 +30,4 @@ function handlePlayClues(){
     }else 
         document.getElementById('clue').value = 'Has ganado campeona!!!';    
     }
-    
-    
 attemptButton.addEventListener('click', handlePlayClues);
-
-//funcion que cuenta intentos
-
-function userNumberCounter(ev);{ 
-    const eventCounter = ev.currentTarget;
-//contar el numero de veces que se escucha el evento
-}
-//escribir en input numero de intentos
-
-//const attemptsNumber = document.querySelector('.js_attemptsnumber');
-//document.getElementById('attempts').value = 'Numero de intentos:' funcion que cuenta intentos;  
-   
