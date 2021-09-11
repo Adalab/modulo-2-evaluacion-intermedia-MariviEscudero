@@ -17,27 +17,29 @@ const attemptButton = document.querySelector('.js_attemptbutton');
 const userNumber = document.querySelector('.js_usernumber');
 console.log(userNumber.value);
 
+//funcion que pinta las pistas
+
 function paintClues() {
   const parseUserNumber = parseInt(userNumber.value);
+  let clueValue = document.getElementById('clue').value;
   if (parseUserNumber < 1) {
-    document.getElementById('clue').value =
-      'El número debe estar entre 1 y 100';
+    clueValue = 'El número debe estar entre 1 y 100';
   } else if (parseUserNumber > 100) {
-    document.getElementById('clue').value =
-      'El número debe estar entre 1 y 100';
+    clueValue = 'El número debe estar entre 1 y 100';
   } else if (parseUserNumber > randomNumber) {
-    document.getElementById('clue').value = 'Demasiado alto';
+    clueValue = 'Demasiado alto';
   } else if (parseUserNumber < randomNumber) {
-    document.getElementById('clue').value = 'Demasiado bajo';
+    clueValue = 'Demasiado bajo';
   } else if (parseUserNumber === '') {
-    document.getElementById('clue').value =
-      'El número debe estar entre 1 y 100';
-  } else document.getElementById('clue').value = 'Has ganado campeona!!!';
+    clueValue = 'El número debe estar entre 1 y 100';
+  } else clueValue = 'Has ganado campeona!!!';
 }
 
-function handlePlayClues() {
-  console.log('Numero del usuario = ' + userNumber.value);
+//listener click sobre el boton
 
+function handlePlayClues() {
+  const userValue = userNumber.value;
+  console.log(`Numero del usuario = ${userValue}`);
   paintClues();
 }
 
