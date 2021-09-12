@@ -19,20 +19,21 @@ console.log(userNumber.value);
 
 //funcion que pinta las pistas
 
+function writeValue(message){
+  document.getElementById('clue').value = message;
+}
+
 function paintClues() {
   const parseUserNumber = parseInt(userNumber.value);
-  let clueValue = document.getElementById('clue').value;
-  if (parseUserNumber < 1) {
-    clueValue = 'El número debe estar entre 1 y 100';
-  } else if (parseUserNumber > 100) {
-    clueValue = 'El número debe estar entre 1 y 100';
+  if (isNaN(parseUserNumber)) {
+    writeValue('Tienes que escribir un número entre 1 y 100');
+  }else if(parseUserNumber < 1 || parseUserNumber > 100 ){
+    writeValue('El número debe estar entre 1 y 100');
   } else if (parseUserNumber > randomNumber) {
-    clueValue = 'Demasiado alto';
+    writeValue('Demasiado alto');
   } else if (parseUserNumber < randomNumber) {
-    clueValue = 'Demasiado bajo';
-  } else if (parseUserNumber === '') {
-    clueValue = 'El número debe estar entre 1 y 100';
-  } else clueValue = 'Has ganado campeona!!!';
+    writeValue('Demasiado bajo');
+  } else writeValue('Has ganado campeona!!!');
 }
 
 //listener click sobre el boton
